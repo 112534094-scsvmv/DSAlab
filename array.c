@@ -18,7 +18,7 @@ int main(){
         }   
     }
     if(!found){
-    	printf("element %d not found in the array\n",search);
+    	printf("Element %d not found in the array\n",search);
     }
     return 0;
 }
