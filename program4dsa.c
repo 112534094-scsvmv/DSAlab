@@ -2,7 +2,7 @@
 
 int main()
 {
-    int n, temp, minIndex;
+    int n,i,j, temp, minIndex;
 
     printf("Enter number of elements: ");
     scanf("%d", &n);
