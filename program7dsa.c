@@ -1,66 +1,55 @@
 #include <stdio.h>
-#define MAX 5
-
-int queue[MAX];
+#define max 5
+int queue[max];
 int front = -1, rear = -1;
-
-// Insert element (Enqueue)
+// insert element (enqueue)
 void enqueue()
 {
     int item;
-    if (rear == MAX - 1)
+    if (rear == max – 1)
     {
-        printf("Queue Overflow!\n");
+        printf(“queue overflow!\n”);
         return;
     }
-    printf("Enter element to insert: ");
-    scanf("%d", &item);
-
+    printf(“enter element to insert: “);
+    scanf(“%d”, &item);
     if (front == -1)
         front = 0;
-
     queue[++rear] = item;
-    printf("Element inserted successfully.\n");
+    printf(“element inserted successfully.\n”);
 }
-
-// Delete element (Dequeue)
+// delete element (dequeue)
 void dequeue()
 {
     if (front == -1 || front > rear)
     {
-        printf("Queue Underflow!\n");
+        printf(“queue underflow!\n”);
         return;
     }
-
-    printf("Deleted element: %d\n", queue[front++]);
+    printf(“deleted element: %d\n”, queue[front++]);
 }
-
-// Display queue elements
+// display queue elements
 void display()
 {
     if (front == -1 || front > rear)
     {
-        printf("Queue is empty.\n");
+        printf(“queue is empty.\n”);
         return;
     }
-
-    printf("Queue elements:\n");
+    printf(“queue elements:\n”);
     for (int i = front; i <= rear; i++)
-        printf("%d ", queue[i]);
-    printf("\n");
+        printf(“%d “, queue[i]);
+    printf(“\n”);
 }
-
 int main()
 {
     int choice;
-
     do
     {
-        printf("\n--- Queue Menu ---\n");
-        printf("1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
+        printf(“\n--- queue menu ---\n”);
+        printf(“1. enqueue\n2. dequeue\n3. display\n4. exit\n”);
+        printf(“enter your choice: “);
+        scanf(“%d”, &choice);
         switch (choice)
         {
         case 1:
@@ -73,12 +62,11 @@ int main()
             display();
             break;
         case 4:
-            printf("Exiting program.\n");
+            printf(“exiting program.\n”);
             break;
         default:
-            printf("Invalid choice!\n");
+            printf(“invalid choice!\n”);
         }
     } while (choice != 4);
-
     return 0;
 }
