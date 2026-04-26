@@ -1,59 +1,52 @@
 #include <stdio.h>
-#define MAX 5
-
-int stack[MAX];
+#define max 
+int stack[max];
 int top = -1;
-
-// Push operation
+// push operation
 void push()
 {
     int item;
-    if (top == MAX - 1)
+    if (top == max – 1)
     {
-        printf("Stack Overflow!\n");
+        printf(“stack overflow!\n”);
         return;
     }
-    printf("Enter element to push: ");
-    scanf("%d", &item);
+    printf(“enter element to push: “);
+    scanf(“%d”, &item);
     stack[++top] = item;
-    printf("Element pushed successfully.\n");
+    printf(“element pushed successfully.\n”);
 }
-
-// Pop operation
+// pop operation
 void pop()
 {
     if (top == -1)
     {
-        printf("Stack Underflow!\n");
+        printf(“stack underflow!\n”);
         return;
     }
-    printf("Popped element: %d\n", stack[top--]);
+    printf(“popped element: %d\n”, stack[top--]);
 }
-
-// Display stack elements
+// display stack elements
 void display()
 {
     if (top == -1)
     {
-        printf("Stack is empty.\n");
+        printf(“stack is empty.\n”);
         return;
     }
-    printf("Stack elements:\n");
+    printf(“stack elements:\n”);
     for (int i = top; i >= 0; i--)
-        printf("%d\n", stack[i]);
+        printf(“%d\n”, stack[i]);
 }
-
 int main()
 {
     int choice;
-
     do
     {
-        printf("\n--- Stack Menu ---\n");
-        printf("1. Push\n2. Pop\n3. Display\n4. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
+        print(“\n--- stack menu ---\n”);
+        printf(“1. push\n2. pop\n3. display\n4. exit\n”);
+        printf(“enter your choice: “);
+        scanf(“%d”, &choice);
         switch (choice)
         {
         case 1:
@@ -66,10 +59,10 @@ int main()
             display();
             break;
         case 4:
-            printf("Exiting program.\n");
+            printf(“exiting program.\n”);
             break;
         default:
-            printf("Invalid choice!\n");
+            printf(“invalid choice!\n”);
         }
     } while (choice != 4);
 
