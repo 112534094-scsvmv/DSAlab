@@ -1,24 +1,18 @@
 #include <stdio.h>
-
 int main()
 {
     int n, key, j;
-
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
-
+    printf(“enter number of elements: “);
+    scanf(“%d”, &n);
     int arr[n];
-
-    printf("Enter %d elements:\n", n);
+    printf(“enter %d elements:\n”, n);
     for (int i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
-
-    // Insertion Sort logic
+    scanf(“%d”, &arr[i]);
+    // insertion sort logic
     for (int i = 1; i < n; i++)
     {
         key = arr[i];
-        j = i - 1;
-
+        j = i – 1;
         while (j >= 0 && arr[j] > key)
         {
             arr[j + 1] = arr[j];
@@ -26,10 +20,8 @@ int main()
         }
         arr[j + 1] = key;
     }
-
-    printf("Sorted array:\n");
+    printf(“sorted array:\n”);
     for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-
+     printf(“%d “, arr[i]);
     return 0;
 }
